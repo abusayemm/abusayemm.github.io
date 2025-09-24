@@ -95,13 +95,18 @@
         },
 
         smothScroll: function () {
-            $(document).on('click', '.smoth-animation', function (event) {
-                event.preventDefault();
-                $('html, body').animate({
-                    scrollTop: $($.attr(this, 'href')).offset().top - 50
-                }, 300);
-            });
-        },
+    $(document).on('click', '.smoth-animation', function (event) {
+        event.preventDefault();            // stop browser + Scrollspy jump
+        event.stopPropagation();           // stop any Bootstrap handlers
+        var target = $($.attr(this, 'href'));
+        if (target.length) {
+            $('html, body').stop(true).animate({
+                scrollTop: target.offset().top - 50
+            }, 300);
+        }
+    });
+},
+
         // two scroll spy
         smothScroll_Two: function () {
             $(document).on('click', '.smoth-animation-two', function (event) {
