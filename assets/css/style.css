@@ -19705,3 +19705,31 @@ body.white-version .rn-btn-ulderline {
   color: var(--color-white) !important;
 }
 /*# sourceMappingURL=../maps/style.css.map */
+
+<style>
+.card-content .designation {
+    display: inline-flex;          /* allows vertical centering */
+    align-items: center;           /* centers icon with text baseline */
+    gap: 6px;                      /* space between text and icon */
+    line-height: 1.4;              /* keep normal text spacing */
+}
+
+.card-content .designation .linkedin-icon svg {
+    fill: #0A66C2 !important;      /* always LinkedIn blue */
+    transition: fill 0.2s ease;
+    width: 18px;
+    height: 18px;
+}
+
+.card-content .designation .linkedin-icon:hover svg {
+    fill: #004182 !important;      /* darker on hover */
+}
+</style>
+
+
+
+html, body {
+  overflow: auto !important;
+}
+
+
